@@ -1,0 +1,66 @@
+# Netlifyデプロイ設定ファイル
+
+# ビルド設定
+[build]
+  # ビルドコマンド（静的サイトなので不要）
+  # command = "npm run build"
+  
+  # 公開ディレクトリ（プロジェクトのルート）
+  publish = "."
+
+# ヘッダー設定
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # セキュリティヘッダー
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # キャッシュ設定
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# リダイレクト設定
+[[redirects]]
+  from = "/line"
+  to = "https://s.lmes.jp/landing-qr/2004427078-bM8L3MM1?uLand=BqXkCI"
+  status = 301
+  force = true
+
+# 404ページ設定
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# 環境変数（必要に応じて）
+[build.environment]
+  # NODE_VERSION = "18"
+
+# 本番環境設定
+[context.production]
+  # 本番環境特有の設定
+
+# プレビュー環境設定
+[context.deploy-preview]
+  # プレビュー時の設定
+
+# ブランチデプロイ設定
+[context.branch-deploy]
+  # ブランチデプロイ時の設定
