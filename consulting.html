@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個別コンサルティング - 借金6億ニキ公式メディア</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: var(--midnight-blue);
+            min-height: 100vh;
+        }
+
+        .consulting-hero {
+            padding: 120px 0 80px;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consulting-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2300d4ff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .consulting-content {
+            padding: 80px 0;
+            background: var(--midnight-blue);
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .consulting-info {
+            padding: 2rem;
+        }
+
+        .consulting-info h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-list li {
+            color: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--electric-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            transition: var(--transition-fast);
+        }
+
+        .benefits-list li:hover {
+            transform: translateX(10px);
+            background: rgba(0, 214, 255, 0.1);
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-size: 1.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .line-registration {
+            background: rgba(255, 255, 255, 0.05);
+            border: 3px solid var(--electric-blue);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0, 214, 255, 0.2);
+        }
+
+        .line-registration h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .line-badge {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 0.5rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .line-registration p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .qr-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+
+        .line-button {
+            display: inline-block;
+            background: #00B900;
+            color: var(--white);
+            padding: 1.5rem 4rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: var(--transition-normal);
+            box-shadow: 0 10px 30px rgba(0, 185, 0, 0.3);
+        }
+
+        .line-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 185, 0, 0.4);
+        }
+
+        .line-button::before {
+            content: '📱 ';
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .feature-item {
+            background: rgba(0, 214, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 214, 255, 0.2);
+        }
+
+        .feature-item h4 {
+            color: var(--electric-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #001a4d 0%, #002d73 100%);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 214, 255, 0.2);
+        }
+
+        .testimonial-card .quote {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-card .author {
+            color: var(--electric-blue);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .consulting-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .line-button {
+                padding: 1.2rem 3rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                            <span class="logo-subtitle">MEDIA</span>
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">ホーム</a></li>
+                        <li><a href="index.html#story" class="nav-link">ストーリー</a></li>
+                        <li><a href="articles.html" class="nav-link">記事</a></li>
+                        <li><a href="videos.html" class="nav-link">動画</a></li>
+                        <li><a href="consulting.html" class="nav-link active">コンサル</a></li>
+                        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="consulting-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>個別コンサルティング</h1>
+                <p>借金6億円から這い上がった実体験をもとに<br>あなたの人生を変える具体的な方法をお伝えします</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- コンサルティング内容 -->
+    <section class="consulting-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- 左側：ベネフィット -->
+                <div class="consulting-info">
+                    <h2>こんな悩みを解決します</h2>
+                    <ul class="benefits-list">
+                        <li>借金返済に追われて将来が見えない</li>
+                        <li>収入を増やしたいが何から始めればいいか分からない</li>
+                        <li>投資詐欺に遭い、立ち直れない</li>
+                        <li>ビジネスを始めたいが失敗が怖い</li>
+                        <li>メンタルが限界で、誰かに相談したい</li>
+                        <li>人生をやり直したいが、方法が分からない</li>
+                    </ul>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; line-height: 1.8;">
+                        どんな困難な状況でも、必ず解決の道はあります。<br>
+                        6億円の借金から立ち直った私が、あなたと一緒に最適な解決策を見つけます。
+                    </p>
+                </div>
+
+                <!-- 右側：LINE登録 -->
+                <div class="line-registration">
+                    <h2>無料LINE相談</h2>
+                    <span class="line-badge">完全無料・秘密厳守</span>
+
+                    <p>
+                        まずはLINEで無料相談から始めましょう。<br>
+                        あなたの状況をお聞きして、最適なアドバイスをお送りします。
+                    </p>
+
+                    <div class="qr-section">
+                        <img src="images/line-qr.png.png" alt="LINE QRコード" style="width: 200px; height: 200px; display: block; margin: 0 auto;">
+                        <p style="color: var(--dark-gray); margin-top: 1rem; margin-bottom: 0;">
+                            QRコードを読み取って友達追加
+                        </p>
+                    </div>
+
+                    <a href="#" class="line-button">LINEで無料相談する</a>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4>24時間受付</h4>
+                            <p>いつでも相談メッセージを送信可能</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>完全秘密厳守</h4>
+                            <p>プライバシーは100%保護されます</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>無料相談</h4>
+                            <p>まずは無料で状況をお聞きします</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>実績多数</h4>
+                            <p>5,000名以上の相談実績</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相談者の声 -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>相談者の声</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="quote">
+                        "3億円の借金で自殺まで考えていましたが、ニキさんのアドバイスで人生が変わりました。今では月収200万円を達成しています。"
+                    </p>
+                    <p class="author">30代男性・元会社員</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">
+                        "投資詐欺で全財産を失い絶望していました。でも具体的な立ち直り方を教えてもらい、1年で生活を立て直せました。"
+                    </p>
+                    <p class="author">40代女性・経営者</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">
+                        "ギャンブルで作った借金500万円。返済しながら副業を始め、今では借金も完済し、独立することができました。"
+                    </p>
+                    <p class="author">20代男性・フリーランス</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                    </div>
+                    <p>どん底から這い上がった男が教える、人生逆転の方法論</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>コンテンツ</h4>
+                        <ul>
+                            <li><a href="articles.html">最新記事</a></li>
+                            <li><a href="popular-articles.html">人気記事</a></li>
+                            <li><a href="videos.html">動画コンテンツ</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="consulting.html">個別コンサル</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>その他</h4>
+                        <ul>
+                            <li><a href="about.html">運営者情報</a></li>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                            <li><a href="terms.html">利用規約</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 借金6億ニキ公式メディア. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
