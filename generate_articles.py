@@ -55,7 +55,10 @@ def generate_article_html(row, index):
     thumbnail = row[1]
     likes = row[2]
     description = row[3]
-    transcript = row[6] if len(row) > 6 else ""
+    # 文字起こし修正(8列目)を優先、なければ文字起こし(7列目)を使用
+    transcript_edited = row[7] if len(row) > 7 else ""
+    transcript_original = row[6] if len(row) > 6 else ""
+    transcript = transcript_edited.strip() if transcript_edited.strip() else transcript_original.strip()
 
     # 記事ID生成
     video_id = extract_video_id(video_url)
