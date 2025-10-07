@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# ローカル開発用（本番では無効化）
+# local_backend: true
+
+media_folder: "images"
+public_folder: "/images"
+
+# 日本語UI
+locale: 'ja'
+
+collections:
+  - name: "articles"
+    label: "記事"
+    folder: "generated_articles"
+    create: true
+    slug: "article-{{fields.slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "スラッグ", name: "slug", widget: "string", hint: "URLに使用される一意の識別子" }
+      - { label: "公開日", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "カテゴリー", name: "category", widget: "select", options: ["借金返済", "詐欺対策", "金融知識", "ビジネス", "マインドセット", "SNS戦略"] }
+      - { label: "アイキャッチ画像", name: "thumbnail", widget: "image", required: false }
+      - { label: "説明文", name: "description", widget: "text" }
+      - { label: "キーワード", name: "keywords", widget: "list", required: false }
+      - { label: "本文", name: "body", widget: "markdown" }
+      - { label: "TikTok URL", name: "tiktok_url", widget: "string", required: false }
+      - { label: "閲覧数", name: "views", widget: "number", default: 0 }
+
+  - name: "pages"
+    label: "固定ページ"
+    files:
+      - label: "About（運営者情報）"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "タイトル", name: "title", widget: "string" }
+          - { label: "本文", name: "body", widget: "markdown" }
+
+      - label: "プライバシーポリシー"
+        name: "privacy"
+        file: "content/privacy.md"
+        fields:
+          - { label: "タイトル", name: "title", widget: "string" }
+          - { label: "本文", name: "body", widget: "markdown" }
+
+      - label: "利用規約"
+        name: "terms"
+        file: "content/terms.md"
+        fields:
+          - { label: "タイトル", name: "title", widget: "string" }
+          - { label: "本文", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "サイト設定"
+    files:
+      - label: "サイト情報"
+        name: "site"
+        file: "content/site-settings.json"
+        fields:
+          - { label: "サイト名", name: "site_name", widget: "string" }
+          - { label: "サイト説明", name: "site_description", widget: "text" }
+          - { label: "LINE登録URL", name: "line_url", widget: "string" }
+          - { label: "TikTokアカウント", name: "tiktok_account", widget: "string" }
+          - { label: "SNSフォロワー数", name: "sns_followers", widget: "number" }
+          - { label: "コンサル実績数", name: "consulting_count", widget: "number" }

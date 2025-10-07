@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運営者情報 - 借金6億ニキ公式メディア</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .about-hero {
+            background: var(--gradient-dark);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .about-content {
+            padding: 80px 0;
+            background: var(--midnight-blue);
+        }
+        .profile-section {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--white);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+        }
+        .profile-info h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+        .profile-info .subtitle {
+            color: var(--electric-blue);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .profile-info p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #001a4d 0%, #002d73 100%);
+        }
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 50px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--electric-blue);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -44px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--electric-blue);
+            border: 3px solid var(--midnight-blue);
+            box-shadow: 0 0 20px rgba(0, 214, 255, 0.5);
+        }
+        .timeline-year {
+            color: var(--electric-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-title {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .timeline-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        .mission-section {
+            padding: 80px 0;
+            background: var(--midnight-blue);
+            text-align: center;
+        }
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .mission-content h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 900;
+        }
+        .mission-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 214, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--electric-blue);
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .profile-image {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                            <span class="logo-subtitle">MEDIA</span>
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">ホーム</a></li>
+                        <li><a href="index.html#story" class="nav-link">ストーリー</a></li>
+                        <li><a href="articles-dynamic.html" class="nav-link">記事</a></li>
+                        <li><a href="videos.html" class="nav-link">動画</a></li>
+                        <li><a href="consulting.html" class="nav-link">コンサル</a></li>
+                        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>運営者情報</h1>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem;">借金6億ニキの真実の物語</p>
+        </div>
+    </section>
+
+    <!-- プロフィール -->
+    <section class="about-content">
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-image">
+                    👨‍💼
+                </div>
+                <div class="profile-info">
+                    <h2>借金6億ニキ</h2>
+                    <p class="subtitle">起業家 / コンサルタント / インフルエンサー</p>
+                    <p>
+                        1985年生まれ。東京都出身。<br>
+                        大学卒業後、大手商社に就職するも、起業への夢を捨てきれず28歳で独立。
+                    </p>
+                    <p>
+                        投資詐欺により6億円の借金を背負うが、7年かけて完済。<br>
+                        現在は年収1億円を超える起業家として、借金で苦しむ人々の支援活動を行っている。
+                    </p>
+                    <p>
+                        SNS総フォロワー数100万人超。<br>
+                        著書「借金6億円からの復活」はベストセラーに。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- タイムライン -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--white); font-size: 2.5rem; margin-bottom: 3rem;">これまでの歩み</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2013年</div>
+                    <div class="timeline-title">起業・独立</div>
+                    <div class="timeline-description">28歳で大手商社を退職し、IT系ベンチャーを創業。初年度から黒字化を達成。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015年</div>
+                    <div class="timeline-title">投資詐欺被害</div>
+                    <div class="timeline-description">知人の紹介で投資話に乗り、結果的に6億円の借金を背負うことに。人生のどん底を経験。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016年</div>
+                    <div class="timeline-title">再起への挑戦</div>
+                    <div class="timeline-description">複数の事業を立ち上げ、月収100万円を達成。返済計画を実行開始。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020年</div>
+                    <div class="timeline-title">SNS活動開始</div>
+                    <div class="timeline-description">自身の経験を発信開始。多くの共感を呼び、フォロワーが急増。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022年</div>
+                    <div class="timeline-title">借金完済</div>
+                    <div class="timeline-description">7年かけて6億円の借金を完済。年収1億円を突破。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024年</div>
+                    <div class="timeline-title">現在 - 新たなステージへ</div>
+                    <div class="timeline-description">
+                        <p style="margin-bottom: 1rem;">TikTokフォロワー6,000人超を達成し、毎日のように借金で悩む人々からDMが届く。</p>
+                        <p style="margin-bottom: 1rem;">月間500件以上の個別相談に応じ、実践的なアドバイスを提供。これまでに200名以上が借金完済を達成。</p>
+                        <p style="margin-bottom: 1rem;">オンラインコンサルティング事業を本格展開し、全国どこからでも支援を受けられる体制を構築。</p>
+                        <p style="margin-bottom: 1rem;">現在も月商5,000万円以上の事業を複数運営しながら、後進の育成と借金問題の啓蒙活動に力を注いでいる。</p>
+                        <p style="font-weight: 600; color: var(--electric-blue);">「借金は必ず返せる。諦めなければ必ず道は開ける」</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTAセクション -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3 style="color: var(--white); font-size: 2rem; margin-bottom: 1.5rem;">続きを読む</h3>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+                    詳細なストーリーや具体的な返済戦略については、<br>
+                    無料LINE登録で限定コンテンツをご覧いただけます。
+                </p>
+                <a href="https://s.lmes.jp/landing-qr/2004427078-bM8L3MM1?uLand=BqXkCI" class="btn btn-primary" target="_blank" style="display: inline-block; padding: 1.2rem 3rem; background: var(--gradient-primary); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3); transition: all 0.3s;">
+                    無料LINE登録はこちら →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ミッション -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <h2>私たちのミッション</h2>
+                <p>
+                    借金で苦しんでいる人に希望を与え、<br>
+                    具体的な解決策を提供することで、<br>
+                    一人でも多くの人が人生を立て直せるようサポートします。
+                </p>
+                <p>
+                    どんな状況からでも必ず這い上がれる。<br>
+                    その確信と方法論を、実体験を基に伝え続けます。
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">100万+</div>
+                        <div class="stat-label">SNS総フォロワー数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">コンサル実績</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">記事・動画数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">満足度</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                    </div>
+                    <p>どん底から這い上がった男が教える、人生逆転の方法論</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>コンテンツ</h4>
+                        <ul>
+                            <li><a href="articles-dynamic.html">最新記事</a></li>
+                            <li><a href="popular-articles.html">人気記事</a></li>
+                            <li><a href="videos.html">動画コンテンツ</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="consulting.html">個別コンサル</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>その他</h4>
+                        <ul>
+                            <li><a href="about.html">運営者情報</a></li>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                            <li><a href="terms.html">利用規約</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 借金6億ニキ公式メディア. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.min.js"></script>
+</body>
+</html>

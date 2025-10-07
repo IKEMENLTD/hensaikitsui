@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画コンテンツ - 借金6億ニキ公式メディア</title>
+    <link rel="stylesheet" href="css/style.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: var(--gradient-dark);
+            padding: 100px 0 50px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .videos-section {
+            padding: 80px 0;
+            background: var(--midnight-blue);
+        }
+
+        .tiktok-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .tiktok-info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 214, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .tiktok-info h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tiktok-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .tiktok-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF0050, #00F2EA);
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-normal);
+            box-shadow: 0 10px 30px rgba(255, 0, 80, 0.3);
+        }
+
+        .tiktok-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 0, 80, 0.4);
+        }
+
+        .tiktok-button::before {
+            content: '🎵 ';
+            font-size: 1.3rem;
+        }
+
+        .tiktok-embed-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .embed-notice {
+            background: rgba(0, 214, 255, 0.1);
+            border: 1px solid var(--electric-blue);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .embed-notice h3 {
+            color: var(--electric-blue);
+            margin-bottom: 1rem;
+        }
+
+        .embed-notice p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* TikTok埋め込みフィード */
+        .tiktok-feed {
+            width: 100%;
+            min-height: 600px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tiktok-feed-placeholder {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .tiktok-feed-placeholder p {
+            margin-bottom: 1rem;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 214, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--electric-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .tiktok-info {
+                padding: 2rem;
+            }
+
+            .tiktok-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                            <span class="logo-subtitle">MEDIA</span>
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">ホーム</a></li>
+                        <li><a href="index.html#story" class="nav-link">ストーリー</a></li>
+                        <li><a href="articles-dynamic.html" class="nav-link">記事</a></li>
+                        <li><a href="videos.html" class="nav-link active">動画</a></li>
+                        <li><a href="consulting.html" class="nav-link">コンサル</a></li>
+                        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <h1>動画コンテンツ</h1>
+            <p>借金6億ニキが語る、リアルな体験と実践的なアドバイス</p>
+        </div>
+    </section>
+
+    <!-- TikTok動画セクション -->
+    <section class="videos-section">
+        <div class="container">
+            <div class="tiktok-container">
+                <!-- TikTok情報 -->
+                <div class="tiktok-info">
+                    <h2>📱 TikTokで最新動画配信中！</h2>
+                    <p>
+                        借金6億円からの復活劇、返済ノウハウ、マインドセットなど<br>
+                        リアルタイムで有益な情報を発信しています。
+                    </p>
+                    <a href="https://www.tiktok.com/@hensaikitsui" target="_blank" rel="noopener noreferrer" class="tiktok-button">
+                        TikTokをフォローする
+                    </a>
+
+                    <div class="stats-section">
+                        <div class="stat-card">
+                            <div class="number">6000+</div>
+                            <div class="label">フォロワー</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">500+</div>
+                            <div class="label">動画投稿</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">200K+</div>
+                            <div class="label">総再生回数</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TikTok埋め込みセクション -->
+                <div class="tiktok-embed-container">
+                    <div class="embed-notice">
+                        <h3>🎬 最新動画はTikTokで！</h3>
+                        <p>
+                            最新の動画コンテンツはTikTokで毎日更新中です。<br>
+                            下のボタンからTikTokアカウントにアクセスして、最新動画をチェックしてください。
+                        </p>
+                    </div>
+
+                    <!-- TikTok埋め込みウィジェット用のコンテナ -->
+                    <div id="tiktok-embed" class="tiktok-feed">
+                        <div class="tiktok-feed-placeholder">
+                            <p style="font-size: 1.2rem; color: var(--white); margin-bottom: 2rem;">
+                                <strong>@hensaikitsui</strong> の最新動画
+                            </p>
+                            <!-- TikTok埋め込みスクリプトまたはiframe -->
+                            <!-- 注: TikTokの埋め込みウィジェットは動的に追加可能 -->
+                            <blockquote class="tiktok-embed"
+                                cite="https://www.tiktok.com/@hensaikitsui"
+                                data-unique-id="hensaikitsui"
+                                data-embed-type="creator"
+                                style="max-width: 780px; min-width: 288px;">
+                                <section>
+                                    <a target="_blank" href="https://www.tiktok.com/@hensaikitsui?refer=creator_embed">@hensaikitsui</a>
+                                </section>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 動画カテゴリー -->
+                <div style="margin-top: 4rem;">
+                    <h2 style="color: var(--white); text-align: center; margin-bottom: 3rem;">配信中のコンテンツ</h2>
+                    <div class="stats-section">
+                        <div class="stat-card">
+                            <h4 style="color: var(--electric-blue); margin-bottom: 1rem;">借金返済ストーリー</h4>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">6億円の借金を背負った経緯から完済までの道のり</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 style="color: var(--electric-blue); margin-bottom: 1rem;">実践的ノウハウ</h4>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">返済戦略、副業、ビジネス構築の具体的な方法</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 style="color: var(--electric-blue); margin-bottom: 1rem;">マインドセット</h4>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">どん底から立ち直るための精神論と行動習慣</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 style="color: var(--electric-blue); margin-bottom: 1rem;">詐欺対策</h4>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">投資詐欺を見抜く方法と被害防止策</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                    </div>
+                    <p>どん底から這い上がった男が教える、人生逆転の方法論</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>コンテンツ</h4>
+                        <ul>
+                            <li><a href="articles-dynamic.html">最新記事</a></li>
+                            <li><a href="popular-articles.html">人気記事</a></li>
+                            <li><a href="videos.html">動画コンテンツ</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="consulting.html">個別コンサル</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>その他</h4>
+                        <ul>
+                            <li><a href="about.html">運営者情報</a></li>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                            <li><a href="terms.html">利用規約</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 借金6億ニキ公式メディア. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TikTok埋め込みスクリプト -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>

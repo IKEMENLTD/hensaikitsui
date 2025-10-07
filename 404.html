@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - ページが見つかりません | 借金6億ニキ公式メディア</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            background: var(--gradient-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .error-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            padding: 2rem;
+        }
+        
+        .error-code {
+            font-size: 10rem;
+            font-weight: 900;
+            background: var(--gradient-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1;
+            text-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--electric-blue);
+        }
+        
+        .error-message {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .error-emoji {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .error-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .error-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-normal);
+            border: 2px solid transparent;
+        }
+        
+        .error-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            border-color: var(--electric-blue);
+        }
+        
+        .error-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--electric-blue);
+        }
+        
+        .error-suggestion {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-emoji">🚫</div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">ページが見つかりません</h1>
+            <p class="error-message">
+                申し訳ございません。お探しのページは存在しないか、<br>
+                移動または削除された可能性があります。
+            </p>
+            
+            <div class="error-buttons">
+                <a href="/" class="error-btn">トップページへ戻る</a>
+                <a href="/articles.html" class="error-btn secondary">記事一覧を見る</a>
+            </div>
+            
+            <p class="error-suggestion">
+                お探しの情報が見つからない場合は、<br>
+                <a href="https://s.lmes.jp/landing-qr/2004427078-bM8L3MM1?uLand=BqXkCI" style="color: var(--electric-blue);">公式LINE</a>からお問い合わせください。
+            </p>
+        </div>
+    </div>
+</body>
+</html>

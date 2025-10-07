@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="借金6億ニキへのお問い合わせ・LINE追加ページ">
+    <meta name="keywords" content="借金6億ニキ,お問い合わせ,LINE,コンタクト">
+    <meta property="og:title" content="お問い合わせ | 借金6億ニキ公式メディア">
+    <meta property="og:description" content="借金6億ニキへのお問い合わせはLINEから。個別相談や質問をお受けしています。">
+    <meta property="og:url" content="https://debt6billion.com/contact">
+    <meta property="og:type" content="website">
+    <title>お問い合わせ | 借金6億ニキ公式メディア</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/animations.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .contact-hero {
+            background: var(--gradient-dark);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230066ff" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,213.3C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info p {
+            color: var(--white);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .line-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .line-section h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .line-section .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .line-benefits {
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .line-benefits h4 {
+            color: var(--electric-blue);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .line-benefits ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .line-benefits li {
+            color: var(--white);
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .line-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .line-benefits li::before {
+            content: '✅';
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .line-button {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1.5rem 4rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+            margin: 2rem 0;
+        }
+
+        .line-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.5);
+        }
+
+        .qr-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+        }
+
+        .qr-section h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 1rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+            font-weight: bold;
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 20px;
+        }
+
+        .faq-section h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: var(--electric-blue);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info h2 {
+                font-size: 2rem;
+            }
+
+            .line-button {
+                padding: 1.2rem 3rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                            <span class="logo-subtitle">MEDIA</span>
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">ホーム</a></li>
+                        <li><a href="index.html#story" class="nav-link">ストーリー</a></li>
+                        <li><a href="articles-dynamic.html" class="nav-link">記事</a></li>
+                        <li><a href="videos.html" class="nav-link">動画</a></li>
+                        <li><a href="consulting.html" class="nav-link">コンサル</a></li>
+                        <li><a href="contact.html" class="nav-link active">お問い合わせ</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; color: var(--white); text-align: center; margin-bottom: 1rem;">お問い合わせ</h1>
+            <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); text-align: center;">LINEで直接ご相談・ご質問をお受けしています</p>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <div class="contact-container">
+        <div class="contact-content">
+            <!-- 左側：お問い合わせ情報 -->
+            <div class="contact-info">
+                <h2>直接相談できる</h2>
+                <p>
+                    借金6億ニキへのご相談・ご質問は、公式LINEアカウントから直接お受けしています。
+                </p>
+                <p>
+                    ビジネス相談、借金返済の悩み、起業のアドバイスなど、どんな内容でもお気軽にメッセージをお送りください。
+                </p>
+                <p>
+                    <strong>対応可能な相談内容：</strong>
+                </p>
+                <ul style="color: var(--white); line-height: 2; padding-left: 1.5rem;">
+                    <li>借金返済戦略の相談</li>
+                    <li>起業・ビジネス展開のアドバイス</li>
+                    <li>投資・資産運用の基礎知識</li>
+                    <li>メンタル面でのサポート</li>
+                    <li>その他、人生相談全般</li>
+                </ul>
+            </div>
+
+            <!-- 右側：LINE追加セクション -->
+            <div class="line-section">
+                <h3>公式LINE友だち追加</h3>
+                <p class="subtitle">今すぐ友だち追加して<br>限定コンテンツを受け取る</p>
+                
+                <div class="line-benefits">
+                    <h4>友だち追加特典</h4>
+                    <ul>
+                        <li>借金6億円から復活した具体的手法</li>
+                        <li>週2回の限定メッセージ配信</li>
+                        <li>個別相談の優先対応</li>
+                        <li>特別セミナーの先行案内</li>
+                        <li>成功事例の詳細レポート</li>
+                    </ul>
+                </div>
+
+                <a href="https://s.lmes.jp/landing-qr/2004427078-bM8L3MM1?uLand=BqXkCI" class="line-button" target="_blank">
+                    今すぐLINE友だち追加
+                </a>
+
+                <div class="qr-section">
+                    <h4>QRコードから追加</h4>
+                    <img loading="lazy" src="images/line-qr.png.png" alt="LINE QRコード" style="width: 200px; height: 200px; margin: 1rem auto; display: block; background: white; padding: 10px; border-radius: 10px;">
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-top: 1rem;">
+                        スマートフォンのカメラでQRコードを読み取ってください
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ セクション -->
+        <div class="faq-section">
+            <h3>よくある質問</h3>
+            <div class="faq-item">
+                <div class="faq-question">Q. LINE相談は無料ですか？</div>
+                <div class="faq-answer">A. はい、LINE相談は完全無料です。お気軽にメッセージをお送りください。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 返信までどのくらいかかりますか？</div>
+                <div class="faq-answer">A. 通常24時間以内に返信させていただきます。混雑時は少しお時間をいただく場合があります。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. どんな相談でも大丈夫ですか？</div>
+                <div class="faq-answer">A. ビジネス、借金、投資、人生相談など幅広く対応しています。まずはお気軽にご相談ください。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 個人情報は守られますか？</div>
+                <div class="faq-answer">A. はい、ご相談内容や個人情報は厳重に管理し、第三者に開示することはありません。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                    </div>
+                    <p>どん底から這い上がった男が教える、人生逆転の方法論</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>コンテンツ</h4>
+                        <ul>
+                            <li><a href="articles-dynamic.html">最新記事</a></li>
+                            <li><a href="popular-articles.html">人気記事</a></li>
+                            <li><a href="videos.html">動画コンテンツ</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="consulting.html">個別コンサル</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>その他</h4>
+                        <ul>
+                            <li><a href="about.html">運営者情報</a></li>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                            <li><a href="terms.html">利用規約</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 借金6億ニキ公式メディア. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.min.js"></script>
+</body>
+</html>

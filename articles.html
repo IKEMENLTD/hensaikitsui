@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事一覧 | 借金6億ニキ公式メディア</title>
+    <meta name="description" content="借金6億ニキの実体験に基づく記事一覧。借金返済戦略、詐欺対策、ビジネス構築など、実践的なノウハウを公開中。">
+    <meta name="keywords" content="借金返済,ビジネス戦略,詐欺対策,起業,経営">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="記事一覧 | 借金6億ニキ公式メディア">
+    <meta property="og:description" content="実体験に基づく借金返済戦略とビジネス構築の記事一覧">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">💸</span>
+                        <span class="logo-text">借金6億ニキ<span class="logo-subtitle">公式メディア</span></span>
+                    </a>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">ホーム</a></li>
+                        <li><a href="index.html#story" class="nav-link">ストーリー</a></li>
+                        <li><a href="articles.html" class="nav-link active">記事</a></li>
+                        <li><a href="videos.html" class="nav-link">動画</a></li>
+                        <li><a href="consulting.html" class="nav-link">コンサル</a></li>
+                        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+                    </ul>
+                    <button class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="articles-page">
+        <div class="articles-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="page-title">全記事一覧</h1>
+                    <p class="page-subtitle">実体験に基づく実践的なビジネス戦略とノウハウ</p>
+                    
+                    <!-- カテゴリーフィルター -->
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">すべて</button>
+                        <button class="filter-btn" data-category="借金返済">借金返済</button>
+                        <button class="filter-btn" data-category="詐欺対策">詐欺対策</button>
+                        <button class="filter-btn" data-category="経営戦略">経営戦略</button>
+                        <button class="filter-btn" data-category="起業">起業</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 記事グリッド -->
+        <section class="articles-grid-section">
+            <div class="container">
+                <div class="articles-stats">
+                    <p class="total-count">全<span id="article-count">6</span>記事</p>
+                    <div class="sort-options">
+                        <select id="sort-select">
+                            <option value="date-desc">新しい順</option>
+                            <option value="date-asc">古い順</option>
+                            <option value="title">タイトル順</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="articles-grid" id="articles-grid">
+                    <!-- 記事1: ブラックリスト脱出 -->
+                    <article class="article-card featured" data-category="借金返済" data-date="2024-09-16">
+                        <div class="article-image">
+                            <img loading="lazy" src="images/article-blacklist-thumb.jpg" alt="ブラックリスト脱出">
+                            <span class="article-badge">必読</span>
+                            <div class="article-overlay">
+                                <span class="read-time">10分で読める</span>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">借金返済</span>
+                                <span class="date">2024.09.16</span>
+                            </div>
+                            <h3 class="article-title">ブラックリストからの脱出方法：信用情報回復の完全ガイド</h3>
+                            <p class="article-excerpt">CIC、JICC、KSCなどの信用情報機関から異動情報を消す方法、時効の援用手続き、デポジットカードの活用方法まで、実体験に基づいた具体的な解決策を解説します。</p>
+                            <div class="article-tags">
+                                <span class="tag">ブラックリスト</span>
+                                <span class="tag">信用情報</span>
+                                <span class="tag">時効の援用</span>
+                            </div>
+                            <a href="article-blacklist.html" class="read-more">続きを読む →</a>
+                        </div>
+                    </article>
+
+                    <!-- 記事2: 投資詐欺 -->
+                    <article class="article-card" data-category="詐欺対策" data-date="2024-09-16">
+                        <div class="article-image">
+                            <img loading="lazy" src="images/article-scam-thumb.jpg" alt="投資詐欺">
+                            <div class="article-overlay">
+                                <span class="read-time">15分で読める</span>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">詐欺対策</span>
+                                <span class="date">2024.09.16</span>
+                            </div>
+                            <h3 class="article-title">投資詐欺で6億円失った経験から学ぶ：詐欺の見分け方と対処法</h3>
+                            <p class="article-excerpt">24歳で6億円の投資詐欺に遭った実体験を公開。詐欺師の手口、共同経営詐欺の実態、被害に遭った時の対処法まで、二度と騙されないための知識を完全解説。</p>
+                            <div class="article-tags">
+                                <span class="tag">投資詐欺</span>
+                                <span class="tag">詐欺師</span>
+                                <span class="tag">被害対策</span>
+                            </div>
+                            <a href="article-scam.html" class="read-more">続きを読む →</a>
+                        </div>
+                    </article>
+
+                    <!-- 記事3: 返済戦略 -->
+                    <article class="article-card" data-category="経営戦略" data-date="2024-09-16">
+                        <div class="article-image">
+                            <img loading="lazy" src="images/article-repayment-thumb.jpg" alt="返済戦略">
+                            <div class="article-overlay">
+                                <span class="read-time">12分で読める</span>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">経営戦略</span>
+                                <span class="date">2024.09.16</span>
+                            </div>
+                            <h3 class="article-title">借金返済のリアル：月1200万円の固定費を払い続ける経営者の戦略</h3>
+                            <p class="article-excerpt">6億円の借金を抱えながら月1200万円以上の固定費を支払い続ける26歳経営者のリアルな返済戦略。キャッシュフロー管理、事業構築、組織運営まで実践的なノウハウを公開。</p>
+                            <div class="article-tags">
+                                <span class="tag">借金返済</span>
+                                <span class="tag">キャッシュフロー</span>
+                                <span class="tag">経営戦略</span>
+                            </div>
+                            <a href="article-repayment.html" class="read-more">続きを読む →</a>
+                        </div>
+                    </article>
+
+                    <!-- 記事4: 起業の真実 -->
+                    <article class="article-card" data-category="起業" data-date="2024-09-10">
+                        <div class="article-image">
+                            <img loading="lazy" src="images/article-blacklist-thumb.jpg" alt="起業の真実" style="filter: hue-rotate(60deg);">
+                            <div class="article-overlay">
+                                <span class="read-time">8分で読める</span>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">起業</span>
+                                <span class="date">2024.09.10</span>
+                            </div>
+                            <h3 class="article-title">失敗から学んだ起業の真実：借金6億円からの再起</h3>
+                            <p class="article-excerpt">20歳で初回の起業に失敗し、その後詐欺に遭い6億円の借金を背負った経験から学んだ、本当の起業とは何かを解説。多くの起業家が陥る罠と、その回避方法について。</p>
+                            <div class="article-tags">
+                                <span class="tag">起業</span>
+                                <span class="tag">失敗体験</span>
+                                <span class="tag">再起</span>
+                            </div>
+                            <a href="#" class="read-more">続きを読む →</a>
+                        </div>
+                    </article>
+
+                    <!-- 記事5: 資金調達 -->
+                    <article class="article-card" data-category="経営戦略" data-date="2024-09-05">
+                        <div class="article-image">
+                            <img loading="lazy" src="images/article-repayment-thumb.jpg" alt="資金調達" style="filter: hue-rotate(120deg);">
+                            <div class="article-overlay">
+                                <span class="read-time">11分で読める</span>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">経営戦略</span>
+                                <span class="date">2024.09.05</span>
+                            </div>
+                            <h3 class="article-title">借金があっても資金調達する方法：ファクタリング活用術</h3>
+                            <p class="article-excerpt">借金を抱えながらも事業資金を調達するための実践的な方法。ファクタリング、売掛金回収、支払サイト交渉など、キャッシュフロー改善の具体的テクニック。</p>
+                            <div class="article-tags">
+                                <span class="tag">資金調達</span>
+                                <span class="tag">ファクタリング</span>
+                                <span class="tag">キャッシュフロー</span>
+                            </div>
+                            <a href="#" class="read-more">続きを読む →</a>
+                        </div>
+                    </article>
+
+                    <!-- 記事6: マインドセット -->
+                    <article class="article-card" data-category="借金返済" data-date="2024-09-01">
+                        <div class="article-image">
+                            <img loading="lazy" src="images/article-scam-thumb.jpg" alt="マインドセット" style="filter: hue-rotate(180deg);">
+                            <div class="article-overlay">
+                                <span class="read-time">9分で読める</span>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">借金返済</span>
+                                <span class="date">2024.09.01</span>
+                            </div>
+                            <h3 class="article-title">借金地獄から這い上がるマインドセット：絶望を希望に変える方法</h3>
+                            <p class="article-excerpt">6億円の借金という絶望的な状況から立ち直るために必要なマインドセット。精神的な支えとなる考え方や、モチベーション維持の具体的な方法を解説。</p>
+                            <div class="article-tags">
+                                <span class="tag">マインドセット</span>
+                                <span class="tag">メンタル</span>
+                                <span class="tag">モチベーション</span>
+                            </div>
+                            <a href="#" class="read-more">続きを読む →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- ページネーション -->
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn">10</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ニュースレター -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-box">
+                    <div class="newsletter-content">
+                        <h3>最新記事をお届け</h3>
+                        <p>新しい記事が公開されたら、いち早くお知らせします</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="メールアドレスを入力" required>
+                            <button type="submit" class="btn btn-primary">無料購読</button>
+                        </form>
+                    </div>
+                    <div class="newsletter-image">
+                        <div class="stats-preview">
+                            <div class="stat-item">
+                                <span class="stat-number">6記事</span>
+                                <span class="stat-label">公開中</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">1000+</span>
+                                <span class="stat-label">読者数</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>借金6億ニキ公式メディア</h3>
+                    <p>どん底から這い上がった経験を、同じ悩みを持つ人々へ。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>カテゴリー</h4>
+                    <ul>
+                        <li><a href="#" onclick="filterArticles('借金返済')">借金返済戦略</a></li>
+                        <li><a href="#" onclick="filterArticles('経営戦略')">ビジネス構築</a></li>
+                        <li><a href="#" onclick="filterArticles('詐欺対策')">詐欺対策</a></li>
+                        <li><a href="#" onclick="filterArticles('起業')">起業・マインドセット</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>人気記事</h4>
+                    <ul>
+                        <li><a href="article-blacklist.html">ブラックリスト脱出方法</a></li>
+                        <li><a href="article-scam.html">投資詐欺の見分け方</a></li>
+                        <li><a href="article-repayment.html">借金返済戦略</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせフォーム</a></li>
+                        <li><a href="https://s.lmes.jp/landing-qr/2004427078-bM8L3MM1?uLand=BqXkCI" target="_blank">公式LINE</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 借金6億ニキ公式メディア. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.min.js"></script>
+    <script>
+        // 記事フィルタリング機能
+        function filterArticles(category) {
+            const articles = document.querySelectorAll('.article-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // ボタンのアクティブ状態を更新
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category === category || (category === 'all' && btn.dataset.category === 'all')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // 記事の表示/非表示
+            let visibleCount = 0;
+            articles.forEach(article => {
+                if (category === 'all' || article.dataset.category === category) {
+                    article.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+            
+            // 記事数を更新
+            document.getElementById('article-count').textContent = visibleCount;
+        }
+        
+        // ソート機能
+        function sortArticles(sortType) {
+            const grid = document.getElementById('articles-grid');
+            const articles = Array.from(grid.querySelectorAll('.article-card'));
+            
+            articles.sort((a, b) => {
+                switch(sortType) {
+                    case 'date-desc':
+                        return new Date(b.dataset.date) - new Date(a.dataset.date);
+                    case 'date-asc':
+                        return new Date(a.dataset.date) - new Date(b.dataset.date);
+                    case 'title':
+                        return a.querySelector('.article-title').textContent.localeCompare(b.querySelector('.article-title').textContent);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // 並び替えた順序でDOMに再挿入
+            articles.forEach(article => grid.appendChild(article));
+        }
+        
+        // イベントリスナー
+        document.addEventListener('DOMContentLoaded', function() {
+            // フィルターボタン
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterArticles(btn.dataset.category);
+                });
+            });
+            
+            // ソート
+            document.getElementById('sort-select').addEventListener('change', (e) => {
+                sortArticles(e.target.value);
+            });
+        });
+    </script>
+</body>
+</html>

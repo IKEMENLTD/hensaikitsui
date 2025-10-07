@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事一覧 | 借金6億ニキ公式メディア</title>
+    <meta name="description" content="借金6億ニキの実体験に基づく記事一覧。借金返済戦略、詐欺対策、ビジネス構築など、実践的なノウハウを公開中。">
+    <meta name="keywords" content="借金返済,ビジネス戦略,詐欺対策,起業,経営">
+
+    <!-- OGP -->
+    <meta property="og:title" content="記事一覧 | 借金6億ニキ公式メディア">
+    <meta property="og:description" content="実体験に基づく借金返済戦略とビジネス構築の記事一覧">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/animations.min.css">
+    <style>
+        .articles-hero {
+            background: var(--gradient-dark);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .filter-section {
+            background: var(--midnight-blue);
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 25px;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        .filter-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--electric-blue);
+        }
+        .filter-btn.active {
+            background: var(--electric-blue);
+            border-color: var(--electric-blue);
+            color: var(--white);
+        }
+        .search-box {
+            position: relative;
+            max-width: 300px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 25px;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        .article-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        .article-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--gradient-primary);
+        }
+        .article-info {
+            padding: 1.5rem;
+        }
+        .article-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--electric-blue);
+            color: var(--white);
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .article-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .article-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .article-likes {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 3rem 0;
+        }
+        .pagination-btn {
+            padding: 0.75rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--electric-blue);
+            border-color: var(--electric-blue);
+        }
+        .pagination-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .pagination-btn.active {
+            background: var(--electric-blue);
+            border-color: var(--electric-blue);
+        }
+        .stats-bar {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .loading {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--electric-blue);
+            font-size: 1.2rem;
+        }
+        .no-results {
+            text-align: center;
+            padding: 4rem 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            .filter-controls {
+                flex-direction: column;
+            }
+            .search-box {
+                max-width: 100%;
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                            <span class="logo-subtitle">MEDIA</span>
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">ホーム</a></li>
+                        <li><a href="index.html#story" class="nav-link">ストーリー</a></li>
+                        <li><a href="articles-dynamic.html" class="nav-link active">記事</a></li>
+                        <li><a href="videos.html" class="nav-link">動画</a></li>
+                        <li><a href="consulting.html" class="nav-link">コンサル</a></li>
+                        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ヒーロー -->
+    <section class="articles-hero">
+        <div class="container">
+            <h1 class="page-title">全記事一覧</h1>
+            <p style="color: rgba(255, 255, 255, 0.8);">TikTokで話題の実体験記事を全て読める</p>
+        </div>
+    </section>
+
+    <!-- フィルター -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-buttons" id="categoryFilters">
+                    <button class="filter-btn active" data-category="all">すべて</button>
+                    <button class="filter-btn" data-category="借金返済">借金返済</button>
+                    <button class="filter-btn" data-category="詐欺対策">詐欺対策</button>
+                    <button class="filter-btn" data-category="金融知識">金融知識</button>
+                    <button class="filter-btn" data-category="ビジネス">ビジネス</button>
+                    <button class="filter-btn" data-category="マインドセット">マインドセット</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" id="searchInput" placeholder="記事を検索...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 統計 -->
+    <section class="stats-bar">
+        <div class="container">
+            <span id="statsText">読み込み中...</span>
+        </div>
+    </section>
+
+    <!-- 記事グリッド -->
+    <section style="background: var(--midnight-blue); min-height: 60vh;">
+        <div class="container">
+            <div id="articlesGrid" class="articles-grid">
+                <div class="loading">記事を読み込み中...</div>
+            </div>
+
+            <!-- ページネーション -->
+            <div id="pagination" class="pagination" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">借金<span class="highlight">6億</span>ニキ</span>
+                    </div>
+                    <p>どん底から這い上がった男が教える、人生逆転の方法論</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>コンテンツ</h4>
+                        <ul>
+                            <li><a href="articles-dynamic.html">最新記事</a></li>
+                            <li><a href="popular-articles.html">人気記事</a></li>
+                            <li><a href="videos.html">動画コンテンツ</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="consulting.html">個別コンサル</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>その他</h4>
+                        <ul>
+                            <li><a href="about.html">運営者情報</a></li>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                            <li><a href="terms.html">利用規約</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 借金6億ニキ公式メディア. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.min.js"></script>
+    <script src="js/articles-dynamic.js"></script>
+</body>
+</html>
